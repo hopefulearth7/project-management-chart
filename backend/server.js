@@ -14,8 +14,11 @@ const pool = new Pool({
   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
 });
 
-// Middleware — CORS_ORIGIN에 쉼표로 여러 출처 허용 (예: 로컬 + Netlify)
-const allowedCorsOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173')
+// Middleware — CORS_ORIGIN에 쉼표로 여러 출처 허용 (로컬 Vite 기본 포트)
+const allowedCorsOrigins = (
+  process.env.CORS_ORIGIN ||
+  'http://localhost:5173,http://127.0.0.1:5173'
+)
   .split(',')
   .map((s) => s.trim())
   .filter(Boolean)

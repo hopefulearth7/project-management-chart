@@ -13,6 +13,16 @@ export default defineConfig({
         changeOrigin: true
       }
     }
+  },
+  // npm run build && npm run preview 시에도 로컬 백엔드로 프록시
+  preview: {
+    port: 4173,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true
+      }
+    }
   }
 })
 
