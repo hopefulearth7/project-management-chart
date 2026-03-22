@@ -1,0 +1,93 @@
+{
+    "mcpServers": {
+      "playwright": {
+        "command": "npx",
+        "args": [
+          "@playwright/mcp@latest"
+        ]
+      },
+      "memory": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "mcp-memory-server"
+        ]
+      },
+      "supabase": {
+        "command": "npx",
+        "args": [
+          "@supabase/mcp-server-supabase"
+        ],
+        "env": {
+          "SUPABASE_ACCESS_TOKEN": "YOUR_SUPABASE_ACCESS_TOKEN"
+        }
+      },
+      "chrome-devtools": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "chrome-devtools-mcp"
+        ]
+      },
+      "filesystem": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-filesystem"
+        ],
+        "env": {
+            "FILESYSTEM_ROOT": "C:\\Users\\YOUR_USER\\Desktop\\projects"
+        }
+      },
+      "github": {
+        "command": "cmd",
+        "args": [
+          "/c",
+          "npx",
+          "-y",
+          "@smithery/cli@latest",
+          "run",
+          "@smithery-ai/github",
+          "--key",
+          "YOUR_SMITHERY_KEY",
+          "--profile",
+          "YOUR_SMITHERY_PROFILE"
+        ]
+      },
+      "sequential-thinking-tools": {
+        "command": "cmd",
+        "args": [
+          "/c",
+          "npx",
+          "-y",
+          "@smithery/cli@latest",
+          "run",
+          "@xinzhongyouhai/mcp-sequentialthinking-tools",
+          "--key",
+          "YOUR_SMITHERY_KEY"
+        ]
+      },
+      "task-master-ai": {
+            "command": "npx",
+            "args": ["-y", "task-master-ai"],
+            "env": {
+              "ANTHROPIC_API_KEY": "YOUR_ANTHROPIC_API_KEY"
+        }
+      },
+          "figma-api": {
+        "command": "cmd",
+        "args": [
+          "/c",
+          "npx",
+          "-y",
+          "@smithery/cli@latest",
+          "run",
+          "@ai-zerolab/mcp-figma",
+          "--key",
+          "YOUR_SMITHERY_KEY",
+          "--profile",
+          "YOUR_SMITHERY_PROFILE"
+        ]
+      }
+    }
+  }
